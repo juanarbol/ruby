@@ -1,0 +1,9 @@
+puts "Digite el tamanho del vector"
+n = gets.chomp.to_i
+vector = []
+
+for i in(0 ... n) #LLenado del vector
+	vector.push(gets.chomp.to_f)
+end
+
+puts multiplos_tres = vector.select {|n| n%3 == 0?}

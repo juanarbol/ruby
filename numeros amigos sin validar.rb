@@ -16,7 +16,7 @@ suma = 0 #se inicializa con cero (como cualquier sumatoria)
 	return suma #se retorna la suma
 end
 
-for n in( 1 .. 10000) #números del 1 al 'x'
+for n in( 1 .. 1000000) #números del 1 al 'x'
 	resultado = suma_divisores(definir_divisores(suma_divisores(definir_divisores(n) )))  #la 'magia'
 	if(n == resultado) #si lo que se obtiene de la magia, es igual al número n, es porque son amigos
 		puts "#{n} y #{suma_divisores definir_divisores n}" #se imprime la pareja PD: NO está validado para NÚMEROS PERFECTOS NI COMBINACIONES
