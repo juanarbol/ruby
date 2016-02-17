@@ -6,13 +6,10 @@ tama_base = 1 + (n-1)*2
 for vertical in(1..n)
 	an = 1 + (vertical-1)*2
 	#espacios
-
 	for esp in(0 .. ((tama_base/2).to_i) - vertical  )
 		print " "
 	end
-	
-	
-
+	#asteriscos
 	for horizonal in(1 .. an)
 		print "*"
 	end
