@@ -1,0 +1,14 @@
+p "Digite el numero a descomponer en factores primos"
+numero = gets.chomp.to_i
+factores = []
+divisor = 2
+
+while numero != 1
+	if numero % divisor == 0
+		factores.push(divisor)
+	else
+		divisor += 1
+	end
+end
+
+print factores
