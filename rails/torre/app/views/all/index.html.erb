@@ -4,14 +4,16 @@
 <%= link_to "Crear Apartamento", new_apartment_path %>
 <%= link_to "Crear Torre", new_tower_path %>
 
-<h1>Todas las personas</h1>
+<h1>Todas los departamentos</h1>
+
 <ul>
 <% @people.each do |person| %>
 	<li>
-	<%= person.name %>
+		<%= person.name%>
 		<ul>
 			<Li>
-			<%= person.apartment_id %>
+				<%= person.apartament.name %>
+				<%= person.tower.name %>
 			</Li>
 		</ul>
 	</li>
