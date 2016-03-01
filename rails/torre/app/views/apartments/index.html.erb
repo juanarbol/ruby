@@ -1,0 +1,16 @@
+<h1>Todas las departamentos</h1>
+
+<%= link_to "Crear departamento", new_apartment_path %>
+<%= link_to "Ir a root", root_path %>
+<ul>
+<% @apartment.each do |apartment| %>
+	<li>
+	<%= apartment.name %><%= link_to "Editar", edit_apartment_path(apartment) %><%= link_to "Eliminar", apartment_path(apartment) , method: :delete, data: { confirm: "Sure?"} %>
+		<ul>
+			<Li>
+			<%= apartment.floor %>		
+			</Li>
+		</ul>
+	</li>
+<% end %>	
+</ul>

@@ -1,0 +1,19 @@
+<h1>Todo</h1>
+
+<%= link_to "Crear Persona", new_person_path %>
+<%= link_to "Crear Apartamento", new_apartment_path %>
+<%= link_to "Crear Torre", new_tower_path %>
+
+<h1>Todas las personas</h1>
+<ul>
+<% @people.each do |person| %>
+	<li>
+	<%= person.name %>
+		<ul>
+			<Li>
+			<%= person.apartment_id %>
+			</Li>
+		</ul>
+	</li>
+<% end %>	
+</ul>

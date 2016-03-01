@@ -1,0 +1,9 @@
+<h1>Crear nueva torre</h1>
+<%= link_to "Ir a root", root_path %>
+<%= form_for @tower do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :guard %>
+	<%= f.text_field :guard %>
+	<%= f.submit %>
+<% end %>	

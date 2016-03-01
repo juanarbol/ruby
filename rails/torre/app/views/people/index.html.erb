@@ -1,0 +1,16 @@
+<h1>Todas las personas</h1>
+
+<%= link_to "Crear personas", new_person_path %>
+<%= link_to "Ir a root", root_path %>
+<ul>
+<% @person.each do |person| %>
+	<li>
+	<%= person.name %><%= link_to "Editar", edit_person_path(person) %><%= link_to "Eliminar", person_path(person) , method: :delete, data: { confirm: "Sure?"} %>
+		<ul>
+			<Li>
+			<%= person.document %>		
+			</Li>
+		</ul>
+	</li>
+<% end %>	
+</ul>
