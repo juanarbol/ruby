@@ -5,5 +5,7 @@
 	<%= f.text_field :name %>
 	<%= f.label :floor %>
 	<%= f.text_field :floor %>
+	<%= f.label :tower_id %>
+	<%= f.select :tower_id, Tower.all.collect{|u| [u.name,u.id]} %>
 	<%= f.submit %>
 <% end %>	

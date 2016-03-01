@@ -28,6 +28,6 @@ class PeopleController < ApplicationController
 	end
 	private
 	def person_params
-		params.require(:person).permit(:name, :document)
+		params.require(:person).permit(:name, :document, :apartment_id)
 	end
 end
