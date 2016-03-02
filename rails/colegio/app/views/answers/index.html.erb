@@ -1,0 +1,10 @@
+<h1>Lista de respuestas</h1>
+<ul>
+<% @answer.each do |a| %>
+	<li>
+		<% if a.subject %>
+			<%= a.homework.text %>( <%= a.subject.name %>) <strong>--:</strong> <%= a.answer %>
+		<% end %>
+	</li>
+<% end %>
+</ul>

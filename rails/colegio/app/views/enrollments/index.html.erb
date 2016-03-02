@@ -1,11 +1,13 @@
 <h1>Lista de matriculados</h1>
+<%= link_to "Nueva matricula", new_enrollment_path %>
 <ul>
 <% @enrollment.each do |e| %>
 	<li>
-		<%= e.students %>
+		<%= e.student.name %> <%= link_to "Editar", edit_enrollment_path(e) %>
+		<%= link_to "Eliminar", enrollment_path(e) , method: :delete, data: { confirm: "Sure?"} %>
 		<ul>
 			<li>
-			<%= e.subjects %>
+			<%= e.subject.name %>
 			</li>
 		</ul>
 	</li>

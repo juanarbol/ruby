@@ -1,3 +1,4 @@
 class Student < ActiveRecord::Base
-	belongs_to :enrollment
+	has_many :enrollments
+	has_many :subjects, :through => :enrollments
 end

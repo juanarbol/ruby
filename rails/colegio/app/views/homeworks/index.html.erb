@@ -1,0 +1,11 @@
+<h1>Todas las tareas</h1>
+<%= link_to "Nueva tarea", new_homework_path%>
+<ul>
+<% @homework.each do |h|%>
+	<li>
+ 	<%= h.text %> de <strong> <%= h.subject.name %> </strong>, para el <%= h.final_date %>
+ 	<%= link_to "Eliminar", homework_path(h) , method: :delete, data: { confirm: "Sure?"} %>
+		<%= link_to "Editar", edit_homework_path(h)%>
+ 	</li>
+<% end %>
+</ul>

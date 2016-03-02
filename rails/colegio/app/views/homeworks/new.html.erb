@@ -1,0 +1,11 @@
+<h1>Nueva tarea par estudiantes</h1>
+
+<%= form_for @homework do |f| %>
+	<%= f.label :text %>
+	<%= f.text_field :text %>
+	<%= f.label :final_date %>
+	<%= f.date_field :final_date %>
+	<%= f.label :subject_id %>
+	<%= f.select(:subject_id, Subject.all.collect {|u| [u.name, u.id]}) %>
+	<%= f.submit%>
+<% end %>
