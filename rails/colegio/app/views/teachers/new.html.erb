@@ -1,0 +1,12 @@
+<h1>Nuevo Profesor</h1>
+<%= form_for @teacher do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :surname %>
+	<%= f.text_field :surname %>
+	<%= f.label :document %>
+	<%= f.text_field :document %>
+	<%= f.label :subject_id %>
+	<%= f.select(:subject_id, Subject.all.collect {|u| [u.name, u.id]}) %>
+	<%= f.submit %>
+<% end %>

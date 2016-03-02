@@ -1,0 +1,9 @@
+<h1>Matricular</h1>
+
+<%= form_for @enrollment do |f| %>
+	<%= f.label :student_id %>
+	<%= f.select(:student_id, Student.all.collect {|u| [u.name, u.id]}) %>
+	<%= f.label :subject_id %>
+	<%= f.select(:subject_id, Subject.all.collect {|u| [u.name, u.id]}) %>
+	<%= f.submit %>
+<% end %>

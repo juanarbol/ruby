@@ -1,0 +1,13 @@
+<h1>Lista de matriculados</h1>
+<ul>
+<% @enrollment.each do |e| %>
+	<li>
+		<%= e.students %>
+		<ul>
+			<li>
+			<%= e.subjects %>
+			</li>
+		</ul>
+	</li>
+<% end %>
+</ul>

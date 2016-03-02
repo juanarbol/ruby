@@ -1,0 +1,10 @@
+<h1>Todos los estudiantes</h1>
+<ul>
+<% @student.each do |t| %>
+	<li>
+		<%= t.name %>
+		<%= link_to "Eliminar", teacher_path(t) , method: :delete, data: { confirm: "Sure?"} %>
+		<%= link_to "Editar", edit_student_path(t)%>
+	</li>
+<% end %>
+</ul>

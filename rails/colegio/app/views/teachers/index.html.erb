@@ -1,0 +1,14 @@
+<h1>Todos los profesores</h1>
+<%= link_to "Nuevo profesor", new_teacher_path %>
+<ul>
+<% @teacher.each do |t| %>
+	<li>
+		<%= t.name + " " + t.surname %>
+		<%= link_to "Eliminar", teacher_path(t) , method: :delete, data: { confirm: "Sure?"} %>
+		<%= link_to "Editar", edit_teacher_path(t)%>
+		<ul>
+			<li>Profesor de: <%= t.subject.name %></li>
+		</ul>
+	</li>
+<% end %>
+</ul>

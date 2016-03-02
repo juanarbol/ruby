@@ -1,0 +1,10 @@
+<h1>Todas las asignatura</h1>
+<ul>
+<% @subject.each do |f| %>
+	<li>
+		<%= f.name %>
+		<%= link_to "Eliminar", subject_path(f) , method: :delete, data: { confirm: "Sure?"} %>
+		<%= link_to "Editar", edit_subject_path(f)%>
+	</li>
+<% end %>
+</ul>
