@@ -1,0 +1,20 @@
+<h1>Todos los viajes</h1>
+<table style="border: 1px solid black">
+<thead>
+	<tr>
+		<th>Nombre piloto</th>
+		<th>Nombre avión</th>
+		<th>Ruta</th>
+		<th>Costo</th>
+	</tr>
+</thead>
+<tbody>
+<tr>
+<% @travels.each do |t|%>
+	<td><%= t.name %></td>
+	<td><%= t.airplane.name %></td>
+	<td><%= t.airplane.route.route %></td>
+<% end %>
+</tr>
+</tbody>
+</table>

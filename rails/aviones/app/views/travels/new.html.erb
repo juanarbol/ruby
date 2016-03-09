@@ -1,0 +1,9 @@
+<h1>Nuevo viaje</h1>
+
+<%= form_for @travel do |f|%>
+	<%= f.label :passenger_id %>
+	<%= f.select :passenger_id, Passenger.all.collect { |p| [p.name, p.id ] } %>
+	<%= f.label :route_id %>
+	<%= f.select :route_id, Route.all.collect { |p| [p.route, p.id ] } %>
+	<%= f.submit "Comprar!" %>
+<% end %>

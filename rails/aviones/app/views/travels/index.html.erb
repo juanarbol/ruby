@@ -1,0 +1,38 @@
+<a href="pilots">Pilotos</a>
+<a href="airplanes">Aviones</a>
+<a href="routes">Rutas</a>
+<a href="passengers">Pasajeros</a>
+<h1>Todos los viajes (comprados)</h1>
+<table>
+<thead>
+	<tr>
+		<th>Nombre</th>
+		<th>Ruta</th>
+		<th>Avión</th>
+		<th>Costo</th>
+		<th colspan="3">Options</th>
+	</tr>
+</thead>
+<tbody>
+
+<% @travel.each do |t| %>
+<tr>
+	<td><%=t.passenger.name %></td>
+	<td><%=t.route.route %></td>
+	<td><%=t.route.airplane.name %></td>
+	<td><%=t.route.price %></td>
+	<td><%= link_to "Editar",edit_travel_path(t) %></td>
+</tr>
+<% end %>
+</tbody>
+</table>
+
+<h2>Comprar un nuevo viaje</h2>
+<a href="travels/new">Nuevo viaje</a>
+<ul>
+<% @passengers.each do |p| %>
+	<li>
+		<%= p.name %>
+	</li>
+<% end %>
+</ul>
