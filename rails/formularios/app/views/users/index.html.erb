@@ -1,0 +1,12 @@
+<h1>Formulario</h1>
+
+<#%= form_tag({controller:"users", action:"contact"},method:"put") do %>
+<%= form_tag("/users/contacts",method:"put") do %>
+	<%= label_tag(:nombre, "Nombre") %>
+	<%= text_field_tag(:nombre) %> <br>
+	<%= label_tag(:apellido, "Apellido") %> 
+	<%= text_field_tag(:apellido) %><br>
+	<%= label_tag(:email, "Email") %>
+	<%= text_field_tag(:email) %><br>
+	<%= submit_tag("Insertar") %> 
+<%end%>

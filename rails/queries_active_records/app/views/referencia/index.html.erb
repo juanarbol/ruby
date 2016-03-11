@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Referencia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Talla</th>
+      <th>Categoria</th>
+      <th>Ripo</th>
+      <th>Marca</th>
+      <th>Descripcion</th>
+      <th>Tela</th>
+      <th>Cantidad</th>
+      <th>Costo</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @referencia.each do |referencium| %>
+      <tr>
+        <td><%= referencium.color %></td>
+        <td><%= referencium.talla %></td>
+        <td><%= referencium.categoria %></td>
+        <td><%= referencium.ripo %></td>
+        <td><%= referencium.marca %></td>
+        <td><%= referencium.descripcion %></td>
+        <td><%= referencium.tela %></td>
+        <td><%= referencium.cantidad %></td>
+        <td><%= referencium.costo %></td>
+        <td><%= referencium.precio %></td>
+        <td><%= link_to 'Show', referencium %></td>
+        <td><%= link_to 'Edit', edit_referencium_path(referencium) %></td>
+        <td><%= link_to 'Destroy', referencium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Referencium', new_referencium_path %>
