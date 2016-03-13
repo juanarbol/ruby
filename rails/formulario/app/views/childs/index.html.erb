@@ -1,0 +1,110 @@
+<h1>Listas</h1>
+
+<h2>Lista de Niños</h2>
+<ul>
+	<% @childs.each do |c|%>
+	<li><%= c.nombre %> <%= link_to "Ver datos", child_path(c.id)%></li>
+	<% end %>
+</ul>
+<h2>Lista de mamis</h2>
+<ul>
+	<% @moms.each do |c|%>
+	<li><%= c.nombre %> <%= link_to "Ver datos", mom_path(c.id)%></li>
+	<% end %>
+</ul>
+
+<h1>Formulario de registro de nuevo niño</h1>
+<%= form_tag(controller: "childs", action:"register_child", method:"put") do %>
+	<h2>Datos personales</h2>
+	<%= label_tag(:nombre, "Nombre") %>
+	<%= text_field_tag :nombre %> <br>
+	<%= label_tag(:segundo_nombre, "Segundo Nombre") %>
+	<%= text_field_tag :segundo_nombre %><br>
+	<%= label_tag(:apellido, "Apellido") %>
+	<%= text_field_tag :apellido %><br>
+	<%= label_tag(:segundo_apellido, "Segundo Apellido") %>
+	<%= text_field_tag :segundo_apellido %><br>
+	
+	<%= label_tag(:documento, "documento") %>
+	<%= text_field_tag :documento %><br>
+	<%= label_tag(:sexo, "sexo") %>
+	<%= text_field_tag :sexo %><br>
+	<%= label_tag(:fecha_nacimiento, "fecha_nacimiento") %>
+	<%= date_field_tag :fecha_nacimiento %><br>
+	<%= label_tag(:nombre_madre, "Nombred de la madre") %>
+	<%= text_field_tag :nombre_madre %><br>
+	<%= label_tag(:nombre_padre, "Nombred del padre") %>
+	<%= text_field_tag :nombre_padre %><br>
+
+	<h2>Vacunas</h2>
+	<%= label_tag(:vacunas, "Rabia") %>
+	<%= check_box_tag(:vacunas) %>
+	<%= label_tag(:vacunas, "Fiebre") %>
+	<%= check_box_tag(:vacunas) %>
+	<%= label_tag(:vacunas, "Tétano") %>
+	<%= check_box_tag(:vacunas) %>
+
+	<h2>Antecedentes</h2>
+	Cancer ? <%= radio_button_tag(:cancer, "cancer_si") %>
+	<%= label_tag(:cancer_si, "Sí") %>
+	<%= radio_button_tag(:cancer, "Cancer_no") %>
+	<%= label_tag(:cancer_no, "No") %> <br>
+
+	Hipertensión ? <%= radio_button_tag(:hipertension, "hipertension_si") %>
+	<%= label_tag(:hipertension_si, "Sí") %>
+	<%= radio_button_tag(:hipertension, "hipertension_no") %>
+	<%= label_tag(:hipertension_no, "No") %><br>
+
+	Diabetes ? <%= radio_button_tag(:diabetes, "diabetes_si") %>
+	<%= label_tag(:diabetes_si, "Sí") %>
+	<%= radio_button_tag(:diabetes, "diabetes_no") %>
+	<%= label_tag(:diabetes_no, "No") %> <br>
+
+	<%= label_tag(:enfermedades,"Otras")%>
+	<%= text_area_tag(:enfermedades,"", size: "24x6") %> <br>
+
+	desnutricion ? <%= radio_button_tag(:desnutricion, "desnutricion_si") %>
+	<%= label_tag(:desnutricion_si, "Sí") %>
+	<%= radio_button_tag(:desnutricion, "desnutricion_no") %>
+	<%= label_tag(:desnutricion_no, "No") %> <br>
+
+	Grupo sanguineo <%= select_tag(:grupo_sanguineo,options_for_select([['A+', "A+"], ['A-',"A-"], ['B+', "B+"], ['B-',"B-"], ['O+', "O+"], ['O-',"O-"]]))%> <br>
+	<%= submit_tag()%>
+<% end %>
+
+<h1>Formulario de registro de nueva mujer</h1>
+<%= form_tag(controller: "childs",action:"register_mom",method:"put") do%>
+	<h2>Datos personales</h2>
+	<%= label_tag(:nombre, "Nombre") %>
+	<%= text_field_tag :nombre %> <br>
+	<%= label_tag(:segundo_nombre, "Segundo Nombre") %>
+	<%= text_field_tag :segundo_nombre %><br>
+	<%= label_tag(:apellido, "Apellido") %>
+	<%= text_field_tag :apellido %><br>
+	<%= label_tag(:segundo_apellido, "Segundo Apellido") %>
+	<%= text_field_tag :segundo_apellido %><br>
+	<%= label_tag(:documento, "documento") %>
+	<%= text_field_tag :documento %> <br>
+	
+	<%= label_tag(:hijos, "hijos") %>
+	<%= number_field_tag :hijos %> <br>
+	<%= label_tag(:abortos, "abortos") %>
+	<%= number_field_tag :abortos %> <br>
+	<%= label_tag(:problemas, "problemas con embarazo") %>
+	<%= text_area_tag(:problemas,"",size: "24x6") %> <br>
+
+	<h2>Antecedentes</h2>
+	Cancer de ovario ? <%= radio_button_tag(:cancer_ovario, "cancer_si") %>
+	<%= label_tag(:cancer_si, "Sí") %>
+	<%= radio_button_tag(:cancer_ovario, "Cancer_no") %>
+	<%= label_tag(:cancer_no, "No") %> <br>
+	Cancer de mama ? <%= radio_button_tag(:cancer_mama, "cancer_si") %>
+	<%= label_tag(:cancer_si, "Sí") %>
+	<%= radio_button_tag(:cancer_mama, "Cancer_no") %>
+	<%= label_tag(:cancer_no, "No") %> <br>
+	<%= label_tag(:otro_cancer, "Otro cancer") %>
+	<%= text_field_tag :otro_cancer %> <br>
+	
+	Grupo sanguineo <%= select_tag(:grupo_sanguineo,options_for_select([['A+', "A+"], ['A-',"A-"], ['B+', "B+"], ['B-',"B-"], ['O+', "O+"], ['O-',"O-"]]))%> <br>
+	<%= submit_tag%>
+<% end %>
